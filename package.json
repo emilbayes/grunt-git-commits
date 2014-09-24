@@ -1,0 +1,39 @@
+{
+  "name": "grunt-git-commits",
+  "description": "Enforce commit message format using Grunt",
+  "version": "1.0.0",
+  "homepage": "https://github.com/tixz/grunt-git-commits",
+  "author": {
+    "name": "Emil Bay",
+    "email": "github@tixz.dk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tixz/grunt-git-commits.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tixz/grunt-git-commits/issues"
+  },
+  "licenses": [
+    {
+      "type": "ISC",
+      "url": "https://github.com/tixz/grunt-git-commits/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-nodeunit": "^0.4.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
