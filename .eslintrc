@@ -1,0 +1,12 @@
+env:
+  node: true
+rules:
+  camelcase:
+    - 0
+  quotes:
+    - 2
+    - 'single'
+  wrap-iife:
+    - 2
+  no-eq-null:
+    - 2
