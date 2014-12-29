@@ -29,6 +29,7 @@
   "devDependencies": {
     "grunt-cli": "^0.1.13",
     "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-eslint": "^2.1.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.5"
