@@ -27,29 +27,29 @@ module.exports = function(grunt) {
           format: /^(Add|Update|Fix|Remove|Docs|Deps):/
         },
         files: [{
-          cwd: 'test/fixtures'
+          cwd: 'tmp'
         }]
       },
       fail: {
         options: {
           format: /^(Add|Update|Fix|Remove|Docs|Deps):/,
           strict: true,
-          cwd: 'test/fixtures'
+          cwd: 'tmp'
         }
       },
       proceedBuild: {
         options: {
           format: /^(Add|Update|Fix|Remove|Docs|Deps):/,
           strict: false,
-          cwd: 'test/fixtures'
+          cwd: 'tmp'
         }
       },
       beginAfter: {
         options: {
           format: /^(Add|Update|Fix|Remove|Docs|Deps):/,
-          begin: 'de988f5',
+          begin: 'ed50ac6',
           strict: true,
-          cwd: 'test/fixtures'
+          cwd: 'tmp'
         }
       },
       includeMerges: {
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
           format: /^(Add|Update|Fix|Remove|Docs|Deps):/,
           noMerges: false,
           strict: true,
-          cwd: 'test/fixtures'
+          cwd: 'tmp'
         }
       }
     },
