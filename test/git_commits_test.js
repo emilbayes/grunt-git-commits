@@ -68,10 +68,10 @@ module.exports = {
       grunt: true,
       args: ['commits:fail', '--no-color']
     }, function(err, result) {
-      test.ok(err === null);
+      test.ok(err !== null);
 
       incorrectCommits.forEach(function(msg) {
-        test.ok(result.stdout.indexOf(msg) !== -1);
+        test.ok(result.stdout.indexOf(msg) !== -1, msg);
       });
 
       test.ok(result.code === 3);
@@ -88,7 +88,7 @@ module.exports = {
       test.ok(err === null);
 
       incorrectCommits.forEach(function(msg) {
-        test.ok(result.stdout.indexOf(msg) !== -1);
+        test.ok(result.stdout.indexOf(msg) !== -1, msg);
       });
 
       test.ok(result.code === 0);
@@ -102,10 +102,10 @@ module.exports = {
       grunt: true,
       args: ['commits:beginAfter', '--no-color']
     }, function(err, result) {
-      test.ok(err === null);
+      test.ok(err !== null);
 
       afterBeginIncorrectCommits.forEach(function(msg) {
-        test.ok(result.stdout.indexOf(msg) !== -1);
+        test.ok(result.stdout.indexOf(msg) !== -1, msg);
       });
 
       test.ok(result.code === 3);
@@ -119,10 +119,11 @@ module.exports = {
       grunt: true,
       args: ['commits:includeMerges', '--no-color']
     }, function(err, result) {
-      test.ok(err === null);
+      console.log('includeMerges');
+      test.ok(err !== null);
 
       incorrectCommitsWithMerge.forEach(function(msg) {
-        test.ok(result.stdout.indexOf(msg) !== -1);
+        test.ok(result.stdout.indexOf(msg) !== -1, msg);
       });
 
       test.ok(result.code === 3);
