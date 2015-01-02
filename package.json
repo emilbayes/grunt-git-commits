@@ -1,7 +1,7 @@
 {
   "name": "grunt-git-commits",
   "description": "Enforce commit message format using Grunt",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/tixz/grunt-git-commits",
   "author": {
     "name": "Emil Bay",
