@@ -65,7 +65,7 @@ module.exports = {
   fail: function(test) {
     test.expect(incorrectCommits.length + 2);
     grunt.util.spawn({
-      cmd: 'grunt',
+      grunt: true,
       args: ['commits:fail', '--no-color']
     }, function(err, result) {
       test.ok(err === null);
@@ -82,7 +82,7 @@ module.exports = {
   proceedBuild: function(test) {
     test.expect(incorrectCommits.length + 2);
     grunt.util.spawn({
-      cmd: 'grunt',
+      grunt: true,
       args: ['commits:proceedBuild', '--no-color']
     }, function(err, result) {
       test.ok(err === null);
@@ -99,7 +99,7 @@ module.exports = {
   beginAfter: function(test) {
     test.expect(afterBeginIncorrectCommits.length + 2);
     grunt.util.spawn({
-      cmd: 'grunt',
+      grunt: true,
       args: ['commits:beginAfter', '--no-color']
     }, function(err, result) {
       test.ok(err === null);
@@ -116,7 +116,7 @@ module.exports = {
   includeMerges: function(test) {
     test.expect(incorrectCommitsWithMerge.length + 2);
     grunt.util.spawn({
-      cmd: 'grunt',
+      grunt: true,
       args: ['commits:includeMerges', '--no-color']
     }, function(err, result) {
       test.ok(err === null);
