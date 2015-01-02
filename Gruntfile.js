@@ -15,7 +15,7 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'tasks/*.js',
-        '<%= tape.files %>'
+        '<%= nodeunit.tests %>'
       ]
     },
 
