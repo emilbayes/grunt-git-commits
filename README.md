@@ -41,13 +41,23 @@ grunt.initConfig({
 Type: `RegExp`
 Default value: `/.*/`
 
-Regular Expression to match commit messages after. The example above requires messages to have a certain tag prepended. Another common style is `[some-module] some message`, which would be `/\[([^]]+)\]/` or `/^\[(tag1|tag2)\]/`
+Regular Expression to match commit messages after. The example above requires messages to have a certain tag prepended. Another common style is `[some-module] some message`, which would be `/\[([^]]+)\]/` or `/^\[(tag1|tag2)\]/`.
+Another popular formatting rule is [Tim Pope's commit message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html), which can be enforced with:
+
+```js
+var format = new RegExp('^[A-Z][^\n]{0,49}' + //First line should start with capital letter and be <= 50 chars
+                        '(' +
+                          '\n\n' + //If more lines follow, enforce an empty line
+                          '([^\n]{0,69}(\n|$))+' + //70 chars on each line, end with a newline, unless it's the last line. Repeat at least once.
+                        ')?'); //However, all of this is optional
+```
 
 #### options.begin
 Type: `String`
 Default value: `null`
 
-Start matching messages (exclusive) after `sha`. This allows one to enforce the `format` in a older project without having to rewrite the history.
+Start matching messages (inclusive) after `sha`. This allows one to enforce the `format` in a older project without having to rewrite the history.
+To make this exclusive append `^`, ie. `ff432d^`.
 
 #### options.noMerge
 Type: `Boolean`
@@ -87,7 +97,7 @@ grunt.initConfig({
 ```
 
 #### Custom Options
-Here we start enforcing `format` after commit `f1c4c51`, ignoring merge commits. Also note that `strict: false` prints all incorrect commits as errors, but allows the build to proceed.
+Here we start enforcing `format` from commit `f1c4c51`, ignoring merge commits. Also note that `strict: false` prints all incorrect commits as errors, but allows the build to proceed.
 
 ```js
 grunt.initConfig({

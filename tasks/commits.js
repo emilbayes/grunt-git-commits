@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       logArgs.push('--no-merges');
     }
     if(options.begin) {
-      logArgs.push(options.begin + '^..HEAD');
+      logArgs.push(options.begin + '..HEAD');
     }
 
     //Currently using the git command line, however another option might be to
