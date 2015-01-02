@@ -2,29 +2,28 @@
 
 The commit tree of our fixture:
 
-
-  *   228ce1f - (HEAD, master) Merge branch 'merge-branch'
+  *   2f3f560 - (HEAD, master) Merge branch 'merge-branch'
   |\
-  | * 5e5bce3 - (merge-branch) Fix: on some branch
-  * | 9ce75de - Remove: start valid messages
-  * | d3c07d9 - Deps: start valid messages
-  * | f1c4c51 - Docs: start valid messages
-  * | bffffa4 - Fixed: subtle invalid messages
+  | * cd1b0b5 - (merge-branch) Fix: on some branch
+  * | d685d5a - Remove: start valid messages
+  * | 2678ae6 - Deps: start valid messages
+  * | 3d55dc6 - Docs: start valid messages
+  * | 3cf2983 - Fixed: subtle invalid messages
   |/
-  * c07edbe - Fix: valid message
-  * de988f5 - Added: invalid message
-  * 8f47515 - Add: valid messages
-  * da6ec5b - Start scatterede invalid messages
-  * 3f17ab0 - Update: valid format
-  * 15158e7 - Second invalid format
-  * ca770d8 - Initial invalid format
+  * d83801f - Fix: valid message
+  * 95d7298 - Added: invalid message
+  * 52d45b1 - Add: valid messages
+  * 499d178 - Start scatterede invalid messages
+  * ed50ac6 - Update: valid format
+  * 2e0da9a - Second invalid format
+  * 2677c9c - Initial invalid format
 
   We assume the format "Tag: message", so the commit tree is divided into the
   following regions:
 
-  ca770d8 + 15158e7   are clearly incorrect
-  3f17ab0..bffffa4    are mixed
-  f1c4c51..HEAD       are correct
+  2677c9c + 2e0da9a   are clearly incorrect
+  ed50ac6..3cf2983    are mixed
+  3d55dc6..HEAD       are correct
   HEAD                is a merge commit
 
 */
@@ -34,19 +33,19 @@ The commit tree of our fixture:
 var grunt = require('grunt');
 
 var commitTree = [
-  '228ce1f - Merge branch \'merge-branch\'',
-  '5e5bce3 - Fix: on some branch',
-  '9ce75de - Remove: start valid messages',
-  'd3c07d9 - Deps: start valid messages',
-  'f1c4c51 - Docs: start valid messages',
-  'bffffa4 - Fixed: subtle invalid messages',
-  'c07edbe - Fix: valid message',
-  'de988f5 - Added: invalid message',
-  '8f47515 - Add: valid messages',
-  'da6ec5b - Start scatterede invalid messages',
-  '3f17ab0 - Update: valid format',
-  '15158e7 - Second invalid format',
-  'ca770d8 - Initial invalid format'
+  '2f3f560 - Merge branch \'merge-branch\'',
+  'cd1b0b5 - Fix: on some branch',
+  'd685d5a - Remove: start valid messages',
+  '2678ae6 - Deps: start valid messages',
+  '3d55dc6 - Docs: start valid messages',
+  '3cf2983 - Fixed: subtle invalid messages',
+  'd83801f - Fix: valid message',
+  '95d7298 - Added: invalid message',
+  '52d45b1 - Add: valid messages',
+  '499d178 - Start scatterede invalid messages',
+  'ed50ac6 - Update: valid format',
+  '2e0da9a - Second invalid format',
+  '2677c9c - Initial commit'
 ];
 
 var incorrectCommits = [commitTree[5], commitTree[7], commitTree[9],
