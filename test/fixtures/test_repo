@@ -8,6 +8,8 @@ GIT_COMMITTER_DATE="Thu, 01 Jan 1970 00:00:00 +0000"
 export GIT_COMMITTER_DATE GIT_AUTHOR_DATE
 
 git init
+git config user.email "github@tixz.dk"
+git config user.name "Emil Bay"
 git commit --allow-empty -m 'Initial commit'
 git commit --allow-empty -m 'Second invalid format'
 git commit --allow-empty -m 'Update: valid format'
