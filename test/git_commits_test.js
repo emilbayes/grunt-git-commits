@@ -55,6 +55,13 @@ var afterBeginIncorrectCommits = incorrectCommits.slice(0, 1);
 var incorrectCommitsWithMerge = incorrectCommits.concat(commitTree[0]);
 
 module.exports = {
+  before: function(test) {
+    grunt.util.spawn({
+      cmd: 'test/fixtures/test_repo'
+    }, function(err) {
+      test.done(err);
+    });
+  },
   fail: function(test) {
     test.expect(incorrectCommits.length + 2);
     grunt.util.spawn({
