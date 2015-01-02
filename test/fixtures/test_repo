@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+mkdir tmp
+cd tmp
+
+GIT_AUTHOR_DATE="Thu, 01 Jan 1970 00:00:00 +0000"
+GIT_COMMITTER_DATE="Thu, 01 Jan 1970 00:00:00 +0000"
+
+export GIT_COMMITTER_DATE GIT_AUTHOR_DATE
+
+git init
+git commit --allow-empty -m 'Initial commit'
+git commit --allow-empty -m 'Second invalid format'
+git commit --allow-empty -m 'Update: valid format'
+git commit --allow-empty -m 'Start scatterede invalid messages'
+git commit --allow-empty -m 'Add: valid messages'
+git commit --allow-empty -m 'Added: invalid message'
+git commit --allow-empty -m 'Fix: valid message'
+git commit --allow-empty -m 'Fixed: subtle invalid messages'
+git commit --allow-empty -m 'Docs: start valid messages'
+git commit --allow-empty -m 'Deps: start valid messages'
+git commit --allow-empty -m 'Remove: start valid messages'
+git branch merge-branch d83801f
+git checkout merge-branch
+git commit --allow-empty -m 'Fix: on some branch'
+git checkout master
+git merge merge-branch --no-ff --no-edit
